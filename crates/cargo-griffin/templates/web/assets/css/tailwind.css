@@ -1,0 +1,22 @@
+/* Tailwind's input. `cargo griffin new` built assets/css/app.css from it with the
+   standalone Tailwind CLI; build it again after you change this file or your markup:
+     tailwindcss -i assets/css/tailwind.css -o assets/css/app.css
+   (the binary is in Griffin's per-user cache). */
+@import "tailwindcss";
+@source "../../src";
+
+@layer base {
+  body { @apply font-sans leading-normal; }
+  main { @apply mx-auto my-8 max-w-lg px-4; }
+}
+
+@layer components {
+  .field { @apply mb-4; }
+  .field label, .field legend { @apply block font-bold; }
+  .field .choice { @apply mr-4 inline-block font-normal; }
+  .field input[type="email"], .field input[type="text"] { @apply w-full rounded border px-2 py-1; }
+  .error { @apply mt-1 text-red-700; }
+  .form-errors { @apply mb-4 text-red-700; }
+  .flash { @apply bg-green-100 px-4 py-2; }
+  .phx-submit-loading button { @apply opacity-60; }
+}

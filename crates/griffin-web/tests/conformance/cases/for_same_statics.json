@@ -1,0 +1,8 @@
+{
+  "template": "<ul><li :if={@show}>x</li><li :for={_ <- @items}>x</li><li :for={_ <- @items}>x</li></ul>",
+  "steps": [
+    { "show": true, "items": [1, 2] },
+    { "items": [1, 2, 3] },
+    { "items": [1] }
+  ]
+}

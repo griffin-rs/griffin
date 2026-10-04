@@ -1,0 +1,9 @@
+{
+  "template": "<ul><li :for={item <- @items} :if={item[\"show\"]}>{item[\"name\"]}</li></ul>",
+  "steps": [
+    { "items": [{ "name": "a", "show": true }, { "name": "b", "show": false }, { "name": "c", "show": true }] },
+    { "items": [{ "name": "a", "show": true }, { "name": "b", "show": true }, { "name": "c", "show": true }] },
+    { "items": [{ "name": "a", "show": false }, { "name": "b", "show": false }, { "name": "c", "show": false }] },
+    { "items": [{ "name": "a", "show": false }, { "name": "b", "show": false }, { "name": "d", "show": true }] }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "template": "<div class=\"box\"   id=\"main\">\n  <br>\n  <input type=\"text\" disabled />\n  <span />\n  <hr/>\n</div>",
+  "steps": [
+    {}
+  ]
+}

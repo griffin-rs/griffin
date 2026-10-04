@@ -1,0 +1,11 @@
+error[E0609]: no field `cuont` on type `&Counter`
+  --> tests/ui/wrong_field_name.rs:11:25
+   |
+11 |             <p>Count: {@cuont}</p>
+   |                         ^^^^^ unknown field
+   |
+help: a field with a similar name exists
+   |
+11 -             <p>Count: {@cuont}</p>
+11 +             <p>Count: {@count}</p>
+   |

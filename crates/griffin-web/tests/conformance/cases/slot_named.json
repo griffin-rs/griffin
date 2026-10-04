@@ -1,0 +1,19 @@
+{
+  "components": "attr :kind, :string, required: true\nslot :header\nslot :inner_block, required: true\nslot :footer\nslot :item\n\ndef panel(assigns) do\n  ~H|<div><header>{render_slot(@header)}</header>{render_slot(@inner_block, @kind)}<ul>{render_slot(@item)}</ul><footer>{render_slot(@footer)}</footer></div>|\nend",
+  "template": "<.panel :let={kind} kind=\"news\"><:header>For {@name}</:header><:item><li>{@first}</li></:item>Some {kind}<:item><li>second</li></:item></.panel>",
+  "steps": [
+    {
+      "name": "Ann",
+      "first": "one"
+    },
+    {
+      "first": "uno"
+    },
+    {
+      "name": "Bob"
+    },
+    {
+      "name": "Bob"
+    }
+  ]
+}

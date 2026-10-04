@@ -1,0 +1,33 @@
+error[E0080]: evaluation panicked: missing required slot `inner_block`
+  --> tests/ui/component_missing_required_slot.rs:18:14
+   |
+18 |             <Card><:footer>Bye</:footer></Card>
+   |              ^^^^ evaluation of `main::_` failed inside this call
+   |
+note: inside `require`
+  --> $RUST/core/src/panic.rs
+   |
+   |         $crate::panicking::panic_display(&$arg);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the failure occurred here
+   |
+  ::: src/template/component.rs
+   |
+   |                 Ok(message) => panic!("{}", message),
+   |                                --------------------- in this macro invocation
+
+error[E0080]: evaluation panicked: missing required slot `footer`
+  --> tests/ui/component_missing_required_slot.rs:19:14
+   |
+19 |             <Card>Hello</Card>
+   |              ^^^^ evaluation of `main::_` failed inside this call
+   |
+note: inside `require`
+  --> $RUST/core/src/panic.rs
+   |
+   |         $crate::panicking::panic_display(&$arg);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the failure occurred here
+   |
+  ::: src/template/component.rs
+   |
+   |                 Ok(message) => panic!("{}", message),
+   |                                --------------------- in this macro invocation

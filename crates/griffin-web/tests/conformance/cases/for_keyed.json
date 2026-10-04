@@ -1,0 +1,12 @@
+{
+  "template": "<h1>{@title}</h1><ul><li :for={item <- @items} :key={item[\"id\"]}>{item[\"name\"]}</li></ul>",
+  "steps": [
+    { "title": "List", "items": [{ "id": 1, "name": "one" }, { "id": 2, "name": "two" }, { "id": 3, "name": "three" }] },
+    { "items": [{ "id": 1, "name": "one" }, { "id": 4, "name": "four" }, { "id": 2, "name": "two" }, { "id": 3, "name": "three" }] },
+    { "items": [{ "id": 1, "name": "one" }, { "id": 4, "name": "four" }, { "id": 3, "name": "three" }] },
+    { "items": [{ "id": 3, "name": "three" }, { "id": 1, "name": "one" }, { "id": 4, "name": "four" }] },
+    { "items": [{ "id": 3, "name": "three" }, { "id": 1, "name": "uno" }, { "id": 4, "name": "four" }] },
+    { "title": "Same list" },
+    { "items": [{ "id": 4, "name": "FOUR" }, { "id": 3, "name": "three" }, { "id": 1, "name": "uno" }] }
+  ]
+}

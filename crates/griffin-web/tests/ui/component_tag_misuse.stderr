@@ -1,0 +1,11 @@
+error: attributes cannot be spread onto a Component
+  --> tests/ui/component_tag_misuse.rs:13:32
+   |
+13 |             <Badge label="new" {rest} />
+   |                                ^^^^^^
+
+error: `<Badge-big>` is capitalised, so it calls a Component, whose name has to be a Rust identifier
+  --> tests/ui/component_tag_misuse.rs:14:13
+   |
+14 |             <Badge-big label="new" />
+   |             ^^^^^^^^^^

@@ -1,0 +1,21 @@
+[package]
+name = "griffin-macros"
+description = "Griffin web framework: procedural macros (html!, routes!, derives). Placeholder release while the framework is being designed."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[lib]
+proc-macro = true
+
+[dependencies]
+# span-locations: `html!` rebuilds the whitespace of its input from token positions.
+proc-macro2 = { version = "1.0.107", features = ["span-locations"] }
+quote = "1.0.47"
+# full: `#[component]` reads a function. visit-mut: it names the lifetimes of the parameters.
+syn = { version = "3.0.6", features = ["full", "visit-mut"] }

@@ -1,0 +1,11 @@
+{
+  "template": "<p>{@count}</p>",
+  "steps": [
+    { "count": "0", "push_events": [["ready", { "at": "mount" }]] },
+    { "count": "1", "push_events": [["highlight", { "id": "item-1" }]] },
+    { "push_events": [["highlight", { "id": "item-2" }], ["scroll", { "to": "<top> & \"bottom\"" }]] },
+    { "count": "2", "reply": { "total": 2, "names": ["Ann", "Bob"] } },
+    { "reply": { "ok": true }, "push_events": [["highlight", { "id": "item-3" }]] },
+    { "count": "3" }
+  ]
+}

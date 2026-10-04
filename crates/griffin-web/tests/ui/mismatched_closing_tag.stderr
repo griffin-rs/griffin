@@ -1,0 +1,5 @@
+error: expected `</p>` to close `<p>`, found `</span>`
+ --> tests/ui/mismatched_closing_tag.rs:6:20
+  |
+6 |             <p>text</span>
+  |                    ^^^^^^^

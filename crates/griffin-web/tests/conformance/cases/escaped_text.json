@@ -1,0 +1,7 @@
+{
+  "template": "<p>{@value}</p>",
+  "steps": [
+    { "value": "<script>alert(\"x\")</script>" },
+    { "value": "Tom & 'Jerry' > \"mice\"" }
+  ]
+}

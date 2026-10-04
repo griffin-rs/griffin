@@ -1,0 +1,8 @@
+{
+  "template": "<p :if={@show}>Hello, {@name}!</p>",
+  "steps": [
+    { "show": true, "name": "Ann" },
+    { "show": false },
+    { "show": true, "name": "Bob" }
+  ]
+}

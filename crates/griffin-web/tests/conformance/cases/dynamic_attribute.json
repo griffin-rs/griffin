@@ -1,0 +1,8 @@
+{
+  "template": "<a href={@href}>link</a>",
+  "steps": [
+    { "href": "/posts" },
+    { "href": "/posts?tag=\"a\"&page=<2>" },
+    { "href": "/posts?tag=\"a\"&page=<2>" }
+  ]
+}

@@ -1,0 +1,51 @@
+error[E0599]: no method named `column` found for struct `Table<'a>` in the current scope
+  --> tests/ui/slot_given_wrongly.rs:18:59
+   |
+ 9 | #[component]
+   | ------------ method `column` not found for this struct
+...
+18 |             <Table rows={&rows}><:col label="N">n</:col><:column>no such slot</:column></Table>
+   |                                                           ^^^^^^
+   |
+help: there is a method `col` with a similar name
+   |
+18 -             <Table rows={&rows}><:col label="N">n</:col><:column>no such slot</:column></Table>
+18 +             <Table rows={&rows}><:col label="N">n</:col><:col>no such slot</:column></Table>
+   |
+
+error[E0599]: no method named `inner_block` found for struct `Table<'a>` in the current scope
+  --> tests/ui/slot_given_wrongly.rs:19:14
+   |
+ 9 | #[component]
+   | ------------ method `inner_block` not found for this struct
+...
+19 |             <Table rows={&rows}><:col label="N">n</:col>no default slot</Table>
+   |              ^^^^^ method not found in `Table<'_>`
+
+error[E0308]: mismatched types
+  --> tests/ui/slot_given_wrongly.rs:20:46
+   |
+20 |             <Table rows={&rows}><:col label={7} title="N">n</:col></Table>
+   |                                       -----  ^ expected `&str`, found integer
+   |                                       |
+   |                                       expected due to the type of this binding
+
+error[E0609]: no field `title` on type `&mut Column<'_>`
+  --> tests/ui/slot_given_wrongly.rs:20:49
+   |
+20 |             <Table rows={&rows}><:col label={7} title="N">n</:col></Table>
+   |                                                 ^^^^^ unknown field
+   |
+   = note: available field is: `label`
+
+error[E0308]: mismatched types
+  --> tests/ui/slot_given_wrongly.rs:21:45
+   |
+21 |             <Table rows={&rows}><:col :let={(a, b)}>{a}{b}</:col></Table>
+   |                                             ^^^^^^
+   |                                             |
+   |                                             expected `u32`, found `(_, _)`
+   |                                             expected due to this
+   |
+   = note: expected type `u32`
+             found tuple `(_, _)`

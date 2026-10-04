@@ -1,0 +1,6 @@
+/target
+# Holds the secret key, generated when the project was created. Never commit it.
+/config.toml
+.env
+# Built by esbuild (and Tailwind) from assets/; `cargo griffin dev` keeps them current.
+/crates/*/static/assets/app.js*

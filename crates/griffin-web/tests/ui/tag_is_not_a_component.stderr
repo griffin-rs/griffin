@@ -1,0 +1,41 @@
+error[E0277]: the trait bound `Badge: Default` is not satisfied
+ --> tests/ui/tag_is_not_a_component.rs:7:13
+  |
+7 |         <p><Badge /></p>
+  |             ^^^^^ the trait `Default` is not implemented for `Badge`
+  |
+help: consider annotating `Badge` with `#[derive(Default)]`
+  |
+3 + #[derive(Default)]
+4 | struct Badge;
+  |
+
+error[E0277]: `Badge` is not a Component
+ --> tests/ui/tag_is_not_a_component.rs:7:13
+  |
+7 |         <p><Badge /></p>
+  |             ^^^^^
+  |             |
+  |             a capitalised tag calls a Component
+  |             required by a bound introduced by this call
+  |
+help: the trait `griffin_web::template::Component` is not implemented for `Badge`
+ --> tests/ui/tag_is_not_a_component.rs:3:1
+  |
+3 | struct Badge;
+  | ^^^^^^^^^^^^
+  = note: define one with `#[griffin_web::component]`, or write lower case for an HTML element
+  = note: this error originates in the macro `html` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: `Badge` is not a Component
+ --> tests/ui/tag_is_not_a_component.rs:7:13
+  |
+7 |         <p><Badge /></p>
+  |             ^^^^^ a capitalised tag calls a Component
+  |
+help: the trait `griffin_web::template::Component` is not implemented for `Badge`
+ --> tests/ui/tag_is_not_a_component.rs:3:1
+  |
+3 | struct Badge;
+  | ^^^^^^^^^^^^
+  = note: define one with `#[griffin_web::component]`, or write lower case for an HTML element

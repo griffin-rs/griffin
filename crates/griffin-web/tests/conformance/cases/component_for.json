@@ -1,0 +1,22 @@
+{
+  "components": "attr :label, :string, required: true\nattr :count, :integer, default: 0\n\ndef badge(assigns) do\n  ~H|<span class=\"badge\">{@label} {@count}</span>|\nend",
+  "template": "<p><.badge :for={label <- @labels} label={label} /></p>",
+  "steps": [
+    {
+      "labels": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "labels": [
+        "a",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "labels": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+body { font-family: system-ui, sans-serif; line-height: 1.5; }
+main { max-width: 32rem; margin: 2rem auto; padding: 0 1rem; }
+.field { margin-bottom: 1rem; }
+.field label, .field legend { display: block; font-weight: bold; }
+.field .choice { display: inline-block; font-weight: normal; margin-right: 1rem; }
+.field input[type="email"], .field input[type="text"] { width: 100%; padding: 0.25rem 0.5rem; }
+.error { color: #b00020; margin: 0.25rem 0 0; }
+.form-errors { color: #b00020; margin-bottom: 1rem; }
+.flash { background: #e8f5e9; padding: 0.5rem 1rem; }
+.phx-submit-loading button { opacity: 0.6; }

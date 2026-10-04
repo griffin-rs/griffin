@@ -1,0 +1,4 @@
+# Your settings for this machine. Not committed: it holds the secret key made when the
+# project was created. See config.example.toml for every setting.
+secret_key_base = "__secret__"
+error_page = "development"

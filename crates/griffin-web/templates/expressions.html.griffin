@@ -1,0 +1,4 @@
+<p title={format!("{}}}", '}')}>{if open { "{" } else { "}" }}{
+    // A comment with a } in it.
+    match label { Some(label) => label, None => "none" }
+}</p>

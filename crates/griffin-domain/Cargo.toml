@@ -1,0 +1,18 @@
+[package]
+name = "griffin-domain"
+description = "Griffin web framework: changesets and input parsing for domain crates, with no HTTP dependency. Placeholder release while the framework is being designed."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+griffin-macros = { version = "0.0.0", path = "../griffin-macros" }
+
+[dev-dependencies]
+trybuild = "1.0.121"
+

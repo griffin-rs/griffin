@@ -1,0 +1,5 @@
+reference/
+target/
+.env
+node_modules/
+browser-tests/test-results/

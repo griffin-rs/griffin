@@ -1,0 +1,56 @@
+[package]
+name = "griffin-web"
+description = "Griffin web framework: router, LiveView, templates and controllers on axum, inspired by Phoenix. Placeholder release while the framework is being designed."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+axum = { version = "0.8.9", features = ["ws"] }
+base64 = "0.23.1"
+config = { version = "0.15.27", default-features = false, features = ["toml"] }
+cookie = { version = "0.18.2", features = ["private"] }
+# Reads a form's fields and a query's. axum already builds it, so it adds no crate.
+form_urlencoded = "1.2.2"
+# The operating system's random bytes. The cookie crate already builds it.
+getrandom = "0.2.17"
+# `MAX_PAIRS`, the one number a form is cut at in both crates (#41).
+griffin-domain = { version = "0.0.0", path = "../griffin-domain" }
+griffin-macros = { version = "0.0.0", path = "../griffin-macros" }
+hkdf = "0.13.0"
+hmac = "0.13.0"
+listenfd = { version = "1.0.2", optional = true }
+# Decodes the path of a static file. hyper already builds it.
+percent-encoding = "2.3.2"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+sha2 = "0.11.0"
+# Comparison in constant time. The cookie crate's cipher already builds it.
+subtle = "2.6.1"
+tokio = { version = "1.53.1", features = ["fs", "macros", "rt", "sync"] }
+toml = { version = "1.1.6", default-features = false, features = ["parse", "std"] }
+tower-layer = "0.3.3"
+tower-livereload = { version = "0.10.3", optional = true }
+tower-service = "0.3.3"
+# The logging facade. axum already builds it, so it adds no crate.
+tracing = { version = "0.1.44", default-features = false, features = ["std"] }
+
+[dev-dependencies]
+futures-util = { version = "0.3.34", default-features = false, features = ["sink"] }
+tokio = { version = "1.53.1", features = ["macros", "net", "rt", "time"] }
+tokio-tungstenite = "0.29.0"
+tower = { version = "0.5.3", features = ["util"] }
+# The catch-all error guard (tests/public_errors.rs) parses the library source.
+proc-macro2 = { version = "1.0.107", features = ["span-locations"] }
+syn = { version = "3.0.6", features = ["full", "parsing", "visit"] }
+trybuild = "1.0.121"
+
+[features]
+# Only `cargo griffin dev` turns this on. A release build has neither crate: `griffin::dev`
+# (the handed-over socket and the browser reload) is not compiled.
+dev = ["dep:listenfd", "dep:tower-livereload", "tokio/net"]

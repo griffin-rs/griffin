@@ -1,0 +1,16 @@
+error[E0080]: evaluation panicked: missing required attribute `label`
+  --> tests/ui/component_missing_required_attribute.rs:11:13
+   |
+11 |         <p><Badge count={3} /></p>
+   |             ^^^^^ evaluation of `main::_` failed inside this call
+   |
+note: inside `require`
+  --> $RUST/core/src/panic.rs
+   |
+   |         $crate::panicking::panic_display(&$arg);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the failure occurred here
+   |
+  ::: src/template/component.rs
+   |
+   |                 Ok(message) => panic!("{}", message),
+   |                                --------------------- in this macro invocation

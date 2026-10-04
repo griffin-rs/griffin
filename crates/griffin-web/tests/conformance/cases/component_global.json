@@ -1,0 +1,16 @@
+{
+  "components": "attr :label, :string, required: true\nattr :rest, :global\n\ndef button(assigns) do\n  ~H|<button {@rest}>{@label}</button>|\nend",
+  "template": "<.button label=\"Save\" class={@class} data-id=\"7\" hidden={@busy} />",
+  "steps": [
+    {
+      "class": "primary",
+      "busy": false
+    },
+    {
+      "busy": true
+    },
+    {
+      "class": "plain"
+    }
+  ]
+}

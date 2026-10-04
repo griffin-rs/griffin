@@ -1,0 +1,13 @@
+[package]
+name = "clock"
+description = "Griffin example: a LiveView that a timer on the server updates, without user input."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+# Not aliased to `griffin`, as in the counter example.
+griffin-web = { path = "../../crates/griffin-web" }
+tokio = { version = "1.53.1", features = ["macros", "net", "rt-multi-thread", "time"] }

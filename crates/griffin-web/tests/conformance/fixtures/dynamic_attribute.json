@@ -1,0 +1,17 @@
+[
+  {
+    "0": " href=\"/posts\"",
+    "p": {
+      "0": [
+        "<a",
+        ">link</a>"
+      ]
+    },
+    "r": 1,
+    "s": 0
+  },
+  {
+    "0": " href=\"/posts?tag=&quot;a&quot;&amp;page=&lt;2&gt;\""
+  },
+  {}
+]

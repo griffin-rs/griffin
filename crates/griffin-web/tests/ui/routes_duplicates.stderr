@@ -1,0 +1,17 @@
+error: duplicate route: `GET /users/{user}` is already routed to `show_user`
+  --> tests/ui/routes_duplicates.rs:21:9
+   |
+21 |         GET "/{user: u32}" => rename_user;
+   |         ^^^^^^^^^^^^^^^^^^
+
+error: duplicate route: `GET /users/{id}` is already routed to `show_user`
+  --> tests/ui/routes_duplicates.rs:23:9
+   |
+23 |         LIVE "/{id: u32}" => UserLive;
+   |         ^^^^^^^^^^^^^^^^^
+
+error: duplicate route name: `user` is already the name of `GET /users/{id}`
+  --> tests/ui/routes_duplicates.rs:26:44
+   |
+26 |         PUT "/{id: u32}" => rename_user as user;
+   |                                            ^^^^

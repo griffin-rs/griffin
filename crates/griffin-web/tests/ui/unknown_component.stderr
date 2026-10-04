@@ -1,0 +1,5 @@
+error[E0425]: cannot find type `Badge` in this scope
+ --> tests/ui/unknown_component.rs:5:13
+  |
+5 |         <p><Badge label="new" /></p>
+  |             ^^^^^ not found in this scope

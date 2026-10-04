@@ -1,0 +1,8 @@
+{
+  "template": "<p {@rest}>text</p>",
+  "steps": [
+    { "rest": { "id": "intro", "title": "a \"b\"" } },
+    { "rest": { "hidden": true, "id": "intro", "title": null } },
+    { "rest": {} }
+  ]
+}

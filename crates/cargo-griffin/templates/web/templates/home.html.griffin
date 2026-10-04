@@ -1,0 +1,8 @@
+<main>
+    <h1>Welcome to __App__</h1>
+    <p>This page is a controller that renders the template file <code>templates/home.html.griffin</code>.</p>
+    <ul>
+        <li><a href={Routes::signup()}>Sign up, live</a>: validated as you type, over the socket.</li>
+        <li><a href={Routes::classic()}>Sign up, classic</a>: the same form, posted the plain way.</li>
+    </ul>
+</main>

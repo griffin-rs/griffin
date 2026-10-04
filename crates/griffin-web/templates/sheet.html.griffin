@@ -1,0 +1,4 @@
+<article class="sheet">
+    <h2>{title}</h2>
+    {inner_block}
+</article>

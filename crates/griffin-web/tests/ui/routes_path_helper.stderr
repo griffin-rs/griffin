@@ -1,0 +1,78 @@
+error[E0599]: no associated function or constant named `usr` found for struct `Routes` in the current scope
+  --> tests/ui/routes_path_helper.rs:25:13
+   |
+13 | / routes! {
+14 | |     fn router() -> Router;
+15 | |
+16 | |     GET "/users/{id: u32}" => show_user as user;
+17 | |     GET "/posts/{slug: String}" => show_post as post;
+18 | |     GET "/drafts/{slug: String}" => show_post;
+19 | | }
+   | |_- associated function or constant `usr` not found for this struct
+...
+25 |       Routes::usr(7);
+   |               ^^^ associated function or constant not found in `Routes`
+   |
+help: there is an associated function `user` with a similar name
+   |
+25 |     Routes::user(7);
+   |               +
+
+error[E0599]: no associated function or constant named `draft` found for struct `Routes` in the current scope
+  --> tests/ui/routes_path_helper.rs:26:13
+   |
+13 | / routes! {
+14 | |     fn router() -> Router;
+15 | |
+16 | |     GET "/users/{id: u32}" => show_user as user;
+17 | |     GET "/posts/{slug: String}" => show_post as post;
+18 | |     GET "/drafts/{slug: String}" => show_post;
+19 | | }
+   | |_- associated function or constant `draft` not found for this struct
+...
+26 |       Routes::draft("hello");
+   |               ^^^^^ associated function or constant not found in `Routes`
+
+error[E0308]: mismatched types
+  --> tests/ui/routes_path_helper.rs:29:18
+   |
+29 |     Routes::user("seven");
+   |     ------------ ^^^^^^^ expected `u32`, found `&str`
+   |     |
+   |     arguments to this function are incorrect
+   |
+note: associated function defined here
+  --> tests/ui/routes_path_helper.rs:16:44
+   |
+16 |     GET "/users/{id: u32}" => show_user as user;
+   |         ------------------                 ^^^^
+
+error[E0308]: mismatched types
+  --> tests/ui/routes_path_helper.rs:30:18
+   |
+30 |     Routes::post(7);
+   |     ------------ ^ expected `&str`, found integer
+   |     |
+   |     arguments to this function are incorrect
+   |
+note: associated function defined here
+  --> tests/ui/routes_path_helper.rs:17:49
+   |
+17 |     GET "/posts/{slug: String}" => show_post as post;
+   |         -----------------------                 ^^^^
+
+error[E0061]: this function takes 1 argument but 0 arguments were supplied
+  --> tests/ui/routes_path_helper.rs:33:5
+   |
+33 |     Routes::user();
+   |     ^^^^^^^^^^^^-- argument #1 of type `u32` is missing
+   |
+note: associated function defined here
+  --> tests/ui/routes_path_helper.rs:16:44
+   |
+16 |     GET "/users/{id: u32}" => show_user as user;
+   |         ------------------                 ^^^^
+help: provide the argument
+   |
+33 |     Routes::user(/* u32 */);
+   |                  +++++++++

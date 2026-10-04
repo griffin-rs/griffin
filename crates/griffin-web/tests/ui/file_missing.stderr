@@ -1,0 +1,11 @@
+error: cannot read the template file `$WORKSPACE/target/tests/trybuild/griffin-web/templates/pages/missing.html.griffin`: No such file or directory (os error 2)
+ --> tests/ui/file_missing.rs:4:24
+  |
+4 |     let _ = html_file!("pages/missing.html.griffin");
+  |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: expected the name of a template file as a string literal: `html_file!("page.html.griffin")`
+ --> tests/ui/file_missing.rs:5:24
+  |
+5 |     let _ = html_file!(pages / home);
+  |                        ^^^^^^^^^^^^

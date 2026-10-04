@@ -1,0 +1,7 @@
+{
+  "template": "<p>{Phoenix.HTML.raw(@value)}</p>",
+  "steps": [
+    { "value": "<b>bold</b>" },
+    { "value": "<i>italic</i> & more" }
+  ]
+}

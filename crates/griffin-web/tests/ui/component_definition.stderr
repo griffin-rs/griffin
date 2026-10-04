@@ -1,0 +1,35 @@
+error: a Component cannot have generic parameters yet
+ --> tests/ui/component_definition.rs:4:11
+  |
+4 | fn Generic<T: ToString>(label: T) -> griffin_web::template::Rendered {
+  |           ^^^^^^^^^^^^^
+
+error: expected a name: each parameter of a Component is an attribute
+ --> tests/ui/component_definition.rs:9:12
+  |
+9 | fn Pattern((label, count): (&str, u32)) -> griffin_web::template::Rendered {
+  |            ^^^^^^^^^^^^^^
+
+error: `#[component]` takes no arguments
+  --> tests/ui/component_definition.rs:13:13
+   |
+13 | #[component(cached)]
+   |             ^^^^^^
+
+error: a Component is called by a capitalised tag, so its name has to be capitalised too: `Badge`, not `badge`
+  --> tests/ui/component_definition.rs:19:4
+   |
+19 | fn lower_case(label: &str) -> griffin_web::template::Rendered {
+   |    ^^^^^^^^^^
+
+error: a Component has one `#[global]` parameter
+  --> tests/ui/component_definition.rs:26:15
+   |
+26 |     #[global] two: griffin_web::template::Attributes,
+   |               ^^^
+
+error: a Component is a plain function: it has no `self`
+  --> tests/ui/component_definition.rs:35:15
+   |
+35 |     fn Method(&self, label: &str) -> griffin_web::template::Rendered {
+   |               ^^^^^

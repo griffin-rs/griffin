@@ -1,0 +1,11 @@
+error: `navigate` makes a live link, so it goes on an `<a>` tag, not on `<button>`
+ --> tests/ui/live_link_not_on_a.rs:6:17
+  |
+6 |         <button navigate={path}>Go</button>
+  |                 ^^^^^^^^
+
+error: `patch` makes a live link, so it goes on an `<a>` tag, not on `<div>`
+ --> tests/ui/live_link_not_on_a.rs:9:14
+  |
+9 |         <div patch="/users">Go</div>
+  |              ^^^^^

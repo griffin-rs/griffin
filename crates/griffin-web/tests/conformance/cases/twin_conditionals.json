@@ -1,0 +1,8 @@
+{
+  "template": "<div><p :if={@first}>same</p><p :if={@second}>same</p></div>",
+  "steps": [
+    { "first": true, "second": true },
+    { "first": false },
+    { "first": true }
+  ]
+}

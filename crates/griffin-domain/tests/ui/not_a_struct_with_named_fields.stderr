@@ -1,0 +1,5 @@
+error: Changeset can only be derived for a struct with named fields
+ --> tests/ui/not_a_struct_with_named_fields.rs:4:6
+  |
+4 | enum Shape {
+  |      ^^^^^

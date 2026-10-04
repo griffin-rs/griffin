@@ -1,0 +1,8 @@
+{
+  "template": "<input type=\"checkbox\" checked={@checked}>",
+  "steps": [
+    { "checked": true },
+    { "checked": false },
+    { "checked": true }
+  ]
+}

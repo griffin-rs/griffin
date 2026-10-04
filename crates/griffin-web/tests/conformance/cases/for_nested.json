@@ -1,0 +1,11 @@
+{
+  "template": "<section :for={group <- @groups}><h2>{group[\"name\"]}</h2><p :for={item <- group[\"items\"]}>{item}</p></section>",
+  "steps": [
+    { "groups": [{ "name": "fruit", "items": ["apple", "pear"] }, { "name": "veg", "items": ["leek"] }] },
+    { "groups": [{ "name": "fruit", "items": ["apple", "pear", "plum"] }, { "name": "veg", "items": ["leek"] }] },
+    { "groups": [{ "name": "fruit", "items": ["apple", "pear", "plum"] }, { "name": "greens", "items": ["leek"] }] },
+    { "groups": [{ "name": "fruit", "items": [] }, { "name": "greens", "items": ["leek"] }] },
+    { "groups": [{ "name": "fruit", "items": ["fig"] }, { "name": "greens", "items": ["leek"] }, { "name": "nuts", "items": [] }] },
+    { "groups": [{ "name": "greens", "items": ["leek", "kale"] }] }
+  ]
+}

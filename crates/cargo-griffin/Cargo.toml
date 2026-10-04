@@ -1,0 +1,20 @@
+[package]
+name = "cargo-griffin"
+description = "Griffin web framework: the cargo griffin command (new, dev, routes so far; gen, db later)."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+ctrlc = { version = "3.5.2", features = ["termination"] }
+# Random bytes for the generated project's secret. griffin-web already builds it.
+getrandom = "0.2.17"
+notify = "8"
+serde_json = "1.0.151"
+# Checks the downloaded tools against the pinned checksums.
+sha2 = "0.11.0"

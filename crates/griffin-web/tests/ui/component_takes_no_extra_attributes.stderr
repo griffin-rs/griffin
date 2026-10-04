@@ -1,0 +1,29 @@
+error[E0277]: `Badge<'_>` does not take extra HTML attributes
+  --> tests/ui/component_takes_no_extra_attributes.rs:11:31
+   |
+11 |         <p><Badge label="new" data-id="7" /><Badge label="new" class="big" /></p>
+   |                               ^^^^
+   |                               |
+   |                               not an attribute of this Component
+   |                               required by a bound introduced by this call
+   |
+help: the trait `GlobalAttributes` is not implemented for `Badge<'_>`
+  --> tests/ui/component_takes_no_extra_attributes.rs:4:1
+   |
+ 4 | #[component]
+   | ^^^^^^^^^^^^
+   = note: a Component opts in with a `#[global]` parameter of type `Attributes`
+   = note: this error originates in the macro `html` which comes from the expansion of the attribute macro `component` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0599]: no method named `class` found for struct `Badge<'a>` in the current scope
+  --> tests/ui/component_takes_no_extra_attributes.rs:11:64
+   |
+ 4 | #[component]
+   | ------------ method `class` not found for this struct
+...
+11 |         <p><Badge label="new" data-id="7" /><Badge label="new" class="big" /></p>
+   |                                                                ^^^^^ method not found in `Badge<'_>`
+   |
+   = help: items from traits can only be used if the trait is implemented and in scope
+   = note: the following trait defines an item `class`, perhaps you need to implement it:
+           candidate #1: `GlobalAttributes`

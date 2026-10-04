@@ -1,0 +1,11 @@
+error: a live session cannot be inside another: a live session is a group of routes, and groups are side by side
+ --> tests/ui/routes_live_session.rs:6:26
+  |
+6 |             live_session inner {
+  |                          ^^^^^
+
+error: the live session `admin` is already in this table: its routes go in one block, or the two blocks are one live session by accident
+  --> tests/ui/routes_live_session.rs:20:22
+   |
+20 |         live_session admin {
+   |                      ^^^^^

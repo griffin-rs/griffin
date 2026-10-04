@@ -1,0 +1,12 @@
+{
+  "template": "<div>{@a}<section :if={@one}>{@b}<article :if={@two}>{@c}<p :if={@three}>{@d}</p></article></section></div>",
+  "steps": [
+    { "a": "a1", "b": "b1", "c": "c1", "d": "d1", "one": true, "two": true, "three": true },
+    { "d": "d2" },
+    { "three": false },
+    { "three": true, "b": "b2" },
+    { "two": false },
+    { "two": true },
+    { "one": false, "a": "a2" }
+  ]
+}

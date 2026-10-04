@@ -1,0 +1,19 @@
+{
+  "components": "attr :title, :string, required: true\nslot :inner_block, required: true\n\ndef card(assigns) do\n  ~H|<section><h2>{@title}</h2>{render_slot(@inner_block)}</section>|\nend",
+  "template": "<.card title={@title}>Hello, <b>{@name}</b>!</.card>",
+  "steps": [
+    {
+      "title": "Guest",
+      "name": "Ann"
+    },
+    {
+      "name": "Bob"
+    },
+    {
+      "name": "Bob"
+    },
+    {
+      "title": "Host"
+    }
+  ]
+}

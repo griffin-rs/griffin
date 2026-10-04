@@ -1,0 +1,53 @@
+error: expected a pattern and what to iterate over in braces: `:for={pattern in iterable}`
+ --> tests/ui/for_without_a_pattern_and_iterable.rs:6:13
+  |
+6 |         <li :for>bare</li>
+  |             ^^^^
+
+error: expected a pattern and what to iterate over in braces: `:for={pattern in iterable}`
+ --> tests/ui/for_without_a_pattern_and_iterable.rs:7:13
+  |
+7 |         <li :for="item in items">quoted</li>
+  |             ^^^^
+
+error: expected a pattern and what to iterate over in braces: `:for={pattern in iterable}`
+ --> tests/ui/for_without_a_pattern_and_iterable.rs:8:13
+  |
+8 |         <li :for={items}>no pattern</li>
+  |             ^^^^
+
+error: expected a pattern and what to iterate over in braces: `:for={pattern in iterable}`
+ --> tests/ui/for_without_a_pattern_and_iterable.rs:9:13
+  |
+9 |         <li :for={item <- items}>an arrow</li>
+  |             ^^^^
+
+error: expected a pattern and what to iterate over in braces: `:for={pattern in iterable}`
+  --> tests/ui/for_without_a_pattern_and_iterable.rs:10:13
+   |
+10 |         <li :for={in items}>no pattern before in</li>
+   |             ^^^^
+
+error: expected a pattern and what to iterate over in braces: `:for={pattern in iterable}`
+  --> tests/ui/for_without_a_pattern_and_iterable.rs:11:13
+   |
+11 |         <li :for={item in}>nothing after in</li>
+   |             ^^^^
+
+error: `:for` is given twice
+  --> tests/ui/for_without_a_pattern_and_iterable.rs:12:32
+   |
+12 |         <li :for={_ in &items} :for={_ in &items}>twice</li>
+   |                                ^^^^
+
+error: expected a key in braces: `:key={expression}`
+  --> tests/ui/for_without_a_pattern_and_iterable.rs:13:32
+   |
+13 |         <li :for={_ in &items} :key>bare key</li>
+   |                                ^^^^
+
+error: `:key` tells the items of a `:for` apart, and this element has none
+  --> tests/ui/for_without_a_pattern_and_iterable.rs:14:13
+   |
+14 |         <li :key={1}>key alone</li>
+   |             ^^^^

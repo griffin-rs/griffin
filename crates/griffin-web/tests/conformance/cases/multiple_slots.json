@@ -1,0 +1,9 @@
+{
+  "template": "<h1>{@title}</h1><p>{@body}</p>",
+  "steps": [
+    { "title": "Weather", "body": "Sunny" },
+    { "body": "Rainy" },
+    { "title": "Forecast" },
+    { "title": "Forecast", "body": "Rainy" }
+  ]
+}

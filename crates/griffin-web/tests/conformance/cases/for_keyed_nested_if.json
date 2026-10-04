@@ -1,0 +1,9 @@
+{
+  "template": "<ul><li :for={item <- @items} :key={item[\"id\"]}>{item[\"name\"]}<b :if={item[\"bold\"]}>{item[\"name\"]}</b></li></ul>",
+  "steps": [
+    { "items": [{ "id": 1, "name": "a", "bold": true }, { "id": 2, "name": "b", "bold": false }] },
+    { "items": [{ "id": 1, "name": "a", "bold": true }, { "id": 2, "name": "b", "bold": true }] },
+    { "items": [{ "id": 2, "name": "b", "bold": true }, { "id": 1, "name": "a", "bold": false }] },
+    { "items": [{ "id": 3, "name": "c", "bold": true }, { "id": 2, "name": "b", "bold": true }, { "id": 1, "name": "a", "bold": false }] }
+  ]
+}

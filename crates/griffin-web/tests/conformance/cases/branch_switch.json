@@ -1,0 +1,9 @@
+{
+  "template": "<div>{@name && if @admin, do: ~H|<b>Admin {@name}</b>|, else: ~H|<i>Guest {@name}</i>|}</div>",
+  "steps": [
+    { "admin": true, "name": "Ann" },
+    { "admin": false },
+    { "name": "Bob" },
+    { "admin": true }
+  ]
+}

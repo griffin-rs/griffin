@@ -1,0 +1,13 @@
+error[E0277]: `Money` doesn't implement `std::fmt::Display`
+ --> tests/ui/expression_is_not_text.rs:8:12
+  |
+8 |         <p>{price}</p>
+  |            ^^^^^^^ unsatisfied trait bound
+  |
+help: the trait `std::fmt::Display` is not implemented for `Money`
+ --> tests/ui/expression_is_not_text.rs:3:1
+  |
+3 | struct Money;
+  | ^^^^^^^^^^^^
+  = note: required for `Slot` to implement `From<&Money>`
+  = note: this error originates in the macro `html` (in Nightly builds, run with -Z macro-backtrace for more info)

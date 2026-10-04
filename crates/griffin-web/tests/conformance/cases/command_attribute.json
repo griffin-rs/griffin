@@ -1,0 +1,8 @@
+{
+  "template": "<button phx-click={Phoenix.LiveView.JS.toggle(to: @to)}>Menu</button>",
+  "steps": [
+    { "to": "#menu" },
+    { "to": "a[title=\"<Menu> & 'more'\"]" },
+    { "to": "a[title=\"<Menu> & 'more'\"]" }
+  ]
+}

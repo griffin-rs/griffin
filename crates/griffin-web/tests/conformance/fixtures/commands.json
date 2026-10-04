@@ -1,0 +1,162 @@
+{
+  "add_class": [
+    [
+      "add_class",
+      {
+        "names": [
+          "open",
+          "active"
+        ],
+        "to": "#menu"
+      }
+    ]
+  ],
+  "chain": [
+    [
+      "toggle",
+      {
+        "to": "#menu"
+      }
+    ],
+    [
+      "add_class",
+      {
+        "names": [
+          "open"
+        ],
+        "to": "#button"
+      }
+    ],
+    [
+      "push",
+      {
+        "event": "rename",
+        "value": {
+          "id": "7",
+          "title": "Milk"
+        }
+      }
+    ]
+  ],
+  "dispatch": [
+    [
+      "dispatch",
+      {
+        "event": "menu:opened",
+        "to": "#menu"
+      }
+    ]
+  ],
+  "focus": [
+    [
+      "focus",
+      {
+        "to": "#search"
+      }
+    ]
+  ],
+  "focus_itself": [
+    [
+      "focus",
+      {}
+    ]
+  ],
+  "hide": [
+    [
+      "hide",
+      {
+        "to": "#menu"
+      }
+    ]
+  ],
+  "push": [
+    [
+      "push",
+      {
+        "event": "clear_done"
+      }
+    ]
+  ],
+  "push_with_fields": [
+    [
+      "push",
+      {
+        "event": "rename",
+        "value": {
+          "id": "7",
+          "title": "Milk"
+        }
+      }
+    ]
+  ],
+  "remove_attribute": [
+    [
+      "remove_attr",
+      {
+        "attr": "aria-expanded",
+        "to": "#menu"
+      }
+    ]
+  ],
+  "remove_class": [
+    [
+      "remove_class",
+      {
+        "names": [
+          "open"
+        ],
+        "to": "#menu"
+      }
+    ]
+  ],
+  "set_attribute": [
+    [
+      "set_attr",
+      {
+        "attr": [
+          "aria-expanded",
+          "true"
+        ],
+        "to": "#menu"
+      }
+    ]
+  ],
+  "show": [
+    [
+      "show",
+      {
+        "to": "#menu"
+      }
+    ]
+  ],
+  "toggle": [
+    [
+      "toggle",
+      {
+        "to": "#menu"
+      }
+    ]
+  ],
+  "toggle_itself": [
+    [
+      "toggle",
+      {}
+    ]
+  ],
+  "transition": [
+    [
+      "transition",
+      {
+        "to": "#menu",
+        "transition": [
+          [
+            "fade-in",
+            "duration-300"
+          ],
+          [],
+          []
+        ]
+      }
+    ]
+  ]
+}

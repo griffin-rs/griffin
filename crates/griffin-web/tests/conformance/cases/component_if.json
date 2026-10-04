@@ -1,0 +1,22 @@
+{
+  "components": "attr :label, :string, required: true\nattr :count, :integer, default: 0\n\ndef badge(assigns) do\n  ~H|<span class=\"badge\">{@label} {@count}</span>|\nend",
+  "template": "<p><.badge :if={@show} label={@label} /></p>",
+  "steps": [
+    {
+      "show": false,
+      "label": "new"
+    },
+    {
+      "show": true
+    },
+    {
+      "label": "old"
+    },
+    {
+      "show": false
+    },
+    {
+      "show": true
+    }
+  ]
+}

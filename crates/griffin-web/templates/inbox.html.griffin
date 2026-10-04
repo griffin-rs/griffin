@@ -1,0 +1,8 @@
+<section class="inbox" data-muted={@muted}>
+    <h1>{@title}</h1>
+    <p :if={@unread > 0}>{@unread} unread</p>
+    <ul>
+        <li :for={(id, name) in &@guests} :key={id}>{name}</li>
+    </ul>
+    <Layout title="Guests">{@guests.len()} invited</Layout>
+</section>

@@ -1,0 +1,9 @@
+{
+  "template": "<ul><li :for={item <- @items}>{item}</li></ul>",
+  "steps": [
+    { "items": [] },
+    { "items": ["a"] },
+    { "items": [] },
+    { "items": ["b", "c"] }
+  ]
+}

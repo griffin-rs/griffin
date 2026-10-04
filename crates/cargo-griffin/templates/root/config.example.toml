@@ -1,0 +1,19 @@
+# The settings of the application, read once when it starts. Copy this file to
+# config.toml (which is not committed). Any key can also be set in the environment
+# as __APP__ plus the key in capitals: __APP___PORT=8080.
+
+# Required. Signs and encrypts the session cookie and signs render tokens. At least 32
+# characters, from a secret store, never from source control. Make one with:
+#   openssl rand -hex 32
+secret_key_base = "change me"
+
+# port = 4000
+
+# "plain" shows the page of the status and reveals nothing. "development" shows what
+# failed and where: never for a server others can reach.
+# error_page = "plain"
+
+# The session cookie is `Secure`, so a browser only keeps it over HTTPS. Chromium and
+# Firefox make an exception for http://localhost. Safari does not: there, and only
+# there, set this to false while developing. Never in production.
+# secure_cookie = false

@@ -1,0 +1,10 @@
+{
+  "template": "<p>{@count}</p>",
+  "steps": [
+    { "count": "0", "page_title": "Home" },
+    { "count": "1" },
+    { "page_title": "Home" },
+    { "page_title": "Inbox (3) & <more>" },
+    { "count": "2", "page_title": "Inbox (4)" }
+  ]
+}

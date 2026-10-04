@@ -1,0 +1,111 @@
+error[E0277]: this handler does not take the path parameters of its route, which are `String`
+  --> tests/ui/routes_handler_parameters.rs:49:36
+   |
+49 |     GET "/names/{name: String}" => show_user;
+   |                                    ^^^^^^^^^
+   |                                    |
+   |                                    `fn(State<SigningKey>, griffin_web::router::Path<u32>) -> impl Future<Output = String> {show_user}` doesn't satisfy the trait bound
+   |                                    needs an argument of type `griffin_web::router::Path<String>`
+   |
+   = help: the trait `TakesPath<String, _>` is not implemented for fn item `fn(State<SigningKey>, griffin_web::router::Path<u32>) -> impl Future<Output = String> {show_user}`
+   = note: the types of the parameters are those written in the path of the route, in order: one is itself, as in `Path<u32>`, and several are a tuple, as in `Path<(u32, String)>`
+   = note: it is `griffin_web::router::Path` that a handler takes, which answers 404 when a parameter does not parse, where `axum::extract::Path` answers 400
+note: required by a bound in `takes_path`
+  --> src/router.rs
+   |
+   | pub fn takes_path<P, M, H: TakesPath<P, M>>(handler: H) -> H {
+   |                            ^^^^^^^^^^^^^^^ required by this bound in `takes_path`
+
+error[E0277]: this handler does not take the path parameters of its route, which are `(u32, u32)`
+  --> tests/ui/routes_handler_parameters.rs:52:35
+   |
+52 |         GET "/users/{id: u32}" => show_user;
+   |                                   ^^^^^^^^^
+   |                                   |
+   |                                   `fn(State<SigningKey>, griffin_web::router::Path<u32>) -> impl Future<Output = String> {show_user}` doesn't satisfy the trait bound
+   |                                   needs an argument of type `griffin_web::router::Path<(u32, u32)>`
+   |
+   = help: the trait `TakesPath<(u32, u32), _>` is not implemented for fn item `fn(State<SigningKey>, griffin_web::router::Path<u32>) -> impl Future<Output = String> {show_user}`
+   = note: the types of the parameters are those written in the path of the route, in order: one is itself, as in `Path<u32>`, and several are a tuple, as in `Path<(u32, String)>`
+   = note: it is `griffin_web::router::Path` that a handler takes, which answers 404 when a parameter does not parse, where `axum::extract::Path` answers 400
+note: required by a bound in `takes_path`
+  --> src/router.rs
+   |
+   | pub fn takes_path<P, M, H: TakesPath<P, M>>(handler: H) -> H {
+   |                            ^^^^^^^^^^^^^^^ required by this bound in `takes_path`
+
+error[E0277]: this handler does not take the path parameters of its route, which are `u32`
+  --> tests/ui/routes_handler_parameters.rs:55:31
+   |
+55 |     GET "/lists/{id: u32}" => list_users;
+   |                               ^^^^^^^^^^
+   |                               |
+   |                               `fn() -> impl Future<Output = &'static str> {list_users}` doesn't satisfy the trait bound
+   |                               needs an argument of type `griffin_web::router::Path<u32>`
+   |
+   = help: the trait `TakesPath<u32, _>` is not implemented for fn item `fn() -> impl Future<Output = &'static str> {list_users}`
+   = note: the types of the parameters are those written in the path of the route, in order: one is itself, as in `Path<u32>`, and several are a tuple, as in `Path<(u32, String)>`
+   = note: it is `griffin_web::router::Path` that a handler takes, which answers 404 when a parameter does not parse, where `axum::extract::Path` answers 400
+note: required by a bound in `takes_path`
+  --> src/router.rs
+   |
+   | pub fn takes_path<P, M, H: TakesPath<P, M>>(handler: H) -> H {
+   |                            ^^^^^^^^^^^^^^^ required by this bound in `takes_path`
+
+error[E0277]: this handler does not take the path parameters of its route, which are `u32`
+  --> tests/ui/routes_handler_parameters.rs:57:32
+   |
+57 |     GET "/orders/{id: u32}" => show_order;
+   |                                ^^^^^^^^^^
+   |                                |
+   |                                `fn(griffin_web::axum::extract::Path<u32>) -> impl Future<Output = String> {show_order}` doesn't satisfy the trait bound
+   |                                needs an argument of type `griffin_web::router::Path<u32>`
+   |
+   = help: the trait `TakesPath<u32, _>` is not implemented for fn item `fn(griffin_web::axum::extract::Path<u32>) -> impl Future<Output = String> {show_order}`
+   = note: the types of the parameters are those written in the path of the route, in order: one is itself, as in `Path<u32>`, and several are a tuple, as in `Path<(u32, String)>`
+   = note: it is `griffin_web::router::Path` that a handler takes, which answers 404 when a parameter does not parse, where `axum::extract::Path` answers 400
+note: required by a bound in `takes_path`
+  --> src/router.rs
+   |
+   | pub fn takes_path<P, M, H: TakesPath<P, M>>(handler: H) -> H {
+   |                            ^^^^^^^^^^^^^^^ required by this bound in `takes_path`
+
+error[E0271]: type mismatch resolving `<Counter as LiveView>::Params == u32`
+  --> tests/ui/routes_handler_parameters.rs:60:38
+   |
+60 |     LIVE "/counters/{start: u32}" => Counter;
+   |                                      ^^^^^^^ type mismatch resolving `<Counter as LiveView>::Params == u32`
+   |
+note: expected this to be `u32`
+  --> tests/ui/routes_handler_parameters.rs:27:19
+   |
+27 |     type Params = i32;
+   |                   ^^^
+note: required by a bound in `live_takes_path`
+  --> src/router.rs
+   |
+   | pub fn live_takes_path<V, P, S>() -> MethodRouter<S>
+   |        --------------- required by a bound in this function
+   | where
+   |     V: LiveView<Params = P>,
+   |                 ^^^^^^^^^^ required by this bound in `live_takes_path`
+
+error[E0271]: type mismatch resolving `<Counter as LiveView>::Params == ()`
+  --> tests/ui/routes_handler_parameters.rs:61:25
+   |
+61 |     LIVE "/counters" => Counter;
+   |                         ^^^^^^^ type mismatch resolving `<Counter as LiveView>::Params == ()`
+   |
+note: expected this to be `()`
+  --> tests/ui/routes_handler_parameters.rs:27:19
+   |
+27 |     type Params = i32;
+   |                   ^^^
+note: required by a bound in `live_takes_path`
+  --> src/router.rs
+   |
+   | pub fn live_takes_path<V, P, S>() -> MethodRouter<S>
+   |        --------------- required by a bound in this function
+   | where
+   |     V: LiveView<Params = P>,
+   |                 ^^^^^^^^^^ required by this bound in `live_takes_path`

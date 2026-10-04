@@ -1,0 +1,77 @@
+error: a route table starts with the function it becomes, as in `pub fn router() -> Router<AppState>;`
+ --> tests/ui/routes_syntax.rs:7:9
+  |
+7 |         GET "/" => home;
+  |         ^^^
+
+error: expected a route, a `scope`, a `live_session`, a `pipe_through` or a `layout`, found `mount`: a route starts with `LIVE` or a verb in capitals, one of GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+  --> tests/ui/routes_syntax.rs:15:9
+   |
+15 |         mount users::routes;
+   |         ^^^^^
+
+error: a live session is given a name, as in `live_session admin { .. }`
+  --> tests/ui/routes_syntax.rs:23:22
+   |
+23 |         live_session "admin" {
+   |                      ^^^^^^^
+
+error: expected a route, a `scope`, a `live_session`, a `pipe_through` or a `layout`, found `get`: a route starts with `LIVE` or a verb in capitals, one of GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+  --> tests/ui/routes_syntax.rs:33:9
+   |
+33 |         get "/" => home;
+   |         ^^^
+
+error: expected `=>`
+  --> tests/ui/routes_syntax.rs:41:16
+   |
+41 |         GET "/", home;
+   |                ^
+
+error: expected the path of a handler function or of a LiveView, as in `users::show`
+  --> tests/ui/routes_syntax.rs:49:20
+   |
+49 |         GET "/" => || async { "home" };
+   |                    ^
+
+error: a path starts with `/`
+  --> tests/ui/routes_syntax.rs:57:9
+   |
+57 |     GET "users/{id: u32}" => show_user;
+   |         ^^^^^^^^^^^^^^^^^
+
+error: a path parameter is written with its type, as in `{id: u32}`, which `{id}` is not
+  --> tests/ui/routes_syntax.rs:58:9
+   |
+58 |     GET "/users/{id}" => show_user;
+   |         ^^^^^^^^^^^^^
+
+error: a path parameter is written with its type, as in `{id: u32}`, which `{id: }` is not
+  --> tests/ui/routes_syntax.rs:59:9
+   |
+59 |     GET "/users/{id: }" => show_user;
+   |         ^^^^^^^^^^^^^^^
+
+error: a path parameter is written with its type, as in `{id: u32}`, which `{id: u32` is not
+  --> tests/ui/routes_syntax.rs:60:9
+   |
+60 |     GET "/users/{id: u32" => show_user;
+   |         ^^^^^^^^^^^^^^^^^
+
+error: a path parameter is written with its type, as in `{id: u32}`, which `{*: String}` is not
+  --> tests/ui/routes_syntax.rs:61:9
+   |
+61 |     GET "/files/{*: String}" => show_file;
+   |         ^^^^^^^^^^^^^^^^^^^^
+
+error: a Scope has one layout, and this is its second
+  --> tests/ui/routes_syntax.rs:65:16
+   |
+65 |         layout admin;
+   |                ^^^^^
+
+error: the path parameter `id` is already one of this path, or of the Scopes around it
+  --> tests/ui/routes_syntax.rs:67:13
+   |
+67 |         GET "/users/{id: u32}" => show_user;
+   |             ^^^^^^^^^^^^^^^^^^

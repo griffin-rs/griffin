@@ -1,0 +1,53 @@
+error: `<:item>` gives a slot of a Component, so it goes directly inside the tags of one
+  --> tests/ui/slot_syntax.rs:20:13
+   |
+20 |             <:item>outside a Component</:item>
+   |             ^^^^^^
+
+error: `<:item>` gives a slot of a Component, so it goes directly inside the tags of one
+  --> tests/ui/slot_syntax.rs:22:20
+   |
+22 |                 <p><:item>not directly inside</:item></p>
+   |                    ^^^^^^
+
+error: `:for` cannot be on a slot entry yet
+  --> tests/ui/slot_syntax.rs:23:24
+   |
+23 |                 <:item :for={item in items} :if={items.len() > 1}>many</:item>
+   |                        ^^^^
+
+error: `:if` cannot be on a slot entry yet
+  --> tests/ui/slot_syntax.rs:23:45
+   |
+23 |                 <:item :for={item in items} :if={items.len() > 1}>many</:item>
+   |                                             ^^^
+
+error: `data-id` cannot be an attribute of a slot entry: its name has to be a Rust identifier
+  --> tests/ui/slot_syntax.rs:24:24
+   |
+24 |                 <:item data-id="1" {rest}>one</:item>
+   |                        ^^^^^^^
+
+error: attributes cannot be spread onto a slot entry
+  --> tests/ui/slot_syntax.rs:24:36
+   |
+24 |                 <:item data-id="1" {rest}>one</:item>
+   |                                    ^^^^^^
+
+error: `<:item-big>` gives a slot of a Component, whose name has to be a Rust identifier
+  --> tests/ui/slot_syntax.rs:25:17
+   |
+25 |                 <:item-big>two</:item-big>
+   |                 ^^^^^^^^^^
+
+error: expected a pattern in braces: `:let={pattern}`
+  --> tests/ui/slot_syntax.rs:26:24
+   |
+26 |                 <:item :let>three</:item>
+   |                        ^^^^
+
+error: `:let` binds the argument of the default slot, and `<List>` has no content of its own
+  --> tests/ui/slot_syntax.rs:28:13
+   |
+28 |             <List :let={count}><:item>four</:item></List>
+   |             ^^^^^

@@ -1,0 +1,17 @@
+error: expected a condition in braces: `:if={expression}`
+ --> tests/ui/if_without_a_condition.rs:6:12
+  |
+6 |         <p :if>bare</p>
+  |            ^^^
+
+error: expected a condition in braces: `:if={expression}`
+ --> tests/ui/if_without_a_condition.rs:7:12
+  |
+7 |         <p :if="show">quoted</p>
+  |            ^^^
+
+error: `:if` is given twice
+ --> tests/ui/if_without_a_condition.rs:8:23
+  |
+8 |         <p :if={show} :if={!show}>twice</p>
+  |                       ^^^

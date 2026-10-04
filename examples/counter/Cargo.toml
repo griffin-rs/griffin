@@ -1,0 +1,13 @@
+[package]
+name = "counter"
+description = "Griffin example: a counter LiveView, driven by the unmodified Phoenix client."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+# Not aliased to `griffin`: a generated project does, with one `extern crate` line (the macros write `::griffin_web::` paths).
+griffin-web = { path = "../../crates/griffin-web" }
+tokio = { version = "1.53.1", features = ["macros", "net", "rt-multi-thread"] }

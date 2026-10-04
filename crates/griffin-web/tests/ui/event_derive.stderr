@@ -1,0 +1,62 @@
+error: Event can only be derived for an enum: each variant is one Event
+ --> tests/ui/event_derive.rs:4:8
+  |
+4 | struct Increment {
+  |        ^^^^^^^^^
+
+error: the fields of an Event need names: each is sent as the attribute `phx-value-<name>`
+  --> tests/ui/event_derive.rs:10:8
+   |
+10 |     Add(i32),
+   |        ^^^^^
+
+error: the fields of an Event need names: each is sent as the attribute `phx-value-<name>`
+  --> tests/ui/event_derive.rs:12:9
+   |
+12 |     Move(i32, i32),
+   |         ^^^^^^^^^^
+
+error[E0277]: the trait bound `NoParser: FromStr` is not satisfied
+  --> tests/ui/event_derive.rs:19:18
+   |
+17 | #[derive(Event)]
+   |          ----- required by a bound introduced by this call
+18 | enum Unparsed {
+19 |     Pick { what: NoParser },
+   |                  ^^^^^^^^ unsatisfied trait bound
+   |
+help: the trait `FromStr` is not implemented for `NoParser`
+  --> tests/ui/event_derive.rs:15:1
+   |
+15 | struct NoParser;
+   | ^^^^^^^^^^^^^^^
+   = help: the following other types implement trait `FromStr`:
+             Authority
+             ByteString
+             CString
+             HeaderName
+             HeaderValue
+             IpAddr
+             Ipv4Addr
+             Ipv6Addr
+           and $N others
+note: required by a bound in `Payload::<'a>::field`
+  --> src/live.rs
+   |
+   |     pub fn field<T: FromStr>(&self, name: &'static str) -> Result<T, EventError> {
+   |                     ^^^^^^^ required by this bound in `Payload::<'a>::field`
+
+error[E0277]: the trait bound `NoParser: ToString` is not satisfied
+  --> tests/ui/event_derive.rs:19:12
+   |
+19 |     Pick { what: NoParser },
+   |            ^^^^  -------- required by a bound introduced by this call
+   |            |
+   |            unsatisfied trait bound
+   |
+help: the trait `std::fmt::Display` is not implemented for `NoParser`
+  --> tests/ui/event_derive.rs:15:1
+   |
+15 | struct NoParser;
+   | ^^^^^^^^^^^^^^^
+   = note: required for `NoParser` to implement `ToString`

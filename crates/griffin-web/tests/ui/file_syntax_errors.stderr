@@ -1,0 +1,23 @@
+error: $WORKSPACE/target/tests/trybuild/griffin-web/templates/syntax_errors.html.griffin:2:8: expected a value in double quotes or an `{expression}` after `class=`
+ --> tests/ui/file_syntax_errors.rs:5:24
+  |
+5 |     let _ = html_file!("syntax_errors.html.griffin");
+  |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: $WORKSPACE/target/tests/trybuild/griffin-web/templates/syntax_errors.html.griffin:4:9: `<li>` is never closed
+ --> tests/ui/file_syntax_errors.rs:5:24
+  |
+5 |     let _ = html_file!("syntax_errors.html.griffin");
+  |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: $WORKSPACE/target/tests/trybuild/griffin-web/templates/syntax_errors.html.griffin:6:15: expected a Rust expression and its closing `}` after `{`: write `&lbrace;` for a brace that is text
+ --> tests/ui/file_syntax_errors.rs:5:24
+  |
+5 |     let _ = html_file!("syntax_errors.html.griffin");
+  |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: $WORKSPACE/target/tests/trybuild/griffin-web/templates/syntax_errors.html.griffin:8:1: `<!--` is missing the `-->` that ends it
+ --> tests/ui/file_syntax_errors.rs:5:24
+  |
+5 |     let _ = html_file!("syntax_errors.html.griffin");
+  |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,0 +1,77 @@
+error: expected expression, found `)`
+  --> tests/ui/file_type_errors.rs:18:9
+   |
+18 |         html_file!("type_errors.html.griffin")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected expression
+   |
+   = note: this error originates in the macro `type_errors_html_griffin_line_10_column_20` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0308]: mismatched types
+  --> tests/ui/file_type_errors.rs:18:9
+   |
+18 |         html_file!("type_errors.html.griffin")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `bool`, found `u32`
+   |
+   = note: this error originates in the macro `type_errors_html_griffin_line_3_column_12` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: `u32` is not an iterator
+  --> tests/ui/file_type_errors.rs:18:9
+   |
+18 |         html_file!("type_errors.html.griffin")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ `u32` is not an iterator
+   |
+   = help: the trait `Iterator` is not implemented for `u32`
+   = note: if you want to iterate between `start` until a value `end`, use the exclusive range syntax `start..end` or the inclusive range syntax `start..=end`
+   = note: required for `u32` to implement `IntoIterator`
+   = note: this error originates in the macro `type_errors_html_griffin_line_6_column_18` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: `u32` is not an iterator
+  --> tests/ui/file_type_errors.rs:18:9
+   |
+18 |         html_file!("type_errors.html.griffin")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ `u32` is not an iterator
+   |
+   = help: the trait `Iterator` is not implemented for `u32`
+   = note: if you want to iterate between `start` until a value `end`, use the exclusive range syntax `start..end` or the inclusive range syntax `start..=end`
+   = note: required for `u32` to implement `IntoIterator`
+
+error[E0277]: `Opaque` doesn't implement `std::fmt::Display`
+  --> tests/ui/file_type_errors.rs:18:9
+   |
+18 |         html_file!("type_errors.html.griffin")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ unsatisfied trait bound
+   |
+help: the trait `std::fmt::Display` is not implemented for `Opaque`
+  --> tests/ui/file_type_errors.rs:4:1
+   |
+ 4 | struct Opaque;
+   | ^^^^^^^^^^^^^
+   = note: required for `Slot` to implement `From<&Opaque>`
+   = note: this error originates in the macro `type_errors_html_griffin_line_7_column_19` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0609]: no field `cuont` on type `&Counter`
+  --> tests/ui/file_type_errors.rs:18:9
+   |
+18 |         html_file!("type_errors.html.griffin")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ unknown field
+   |
+   = note: this error originates in the macro `type_errors_html_griffin_line_10_column_8` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0308]: mismatched types
+  --> tests/ui/file_type_errors.rs:18:9
+   |
+18 |         html_file!("type_errors.html.griffin")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `&str`, found `u32`
+   |
+   = note: this error originates in the macro `type_errors_html_griffin_line_11_column_18` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0599]: no method named `colour` found for struct `Badge<'a>` in the current scope
+  --> tests/ui/file_type_errors.rs:18:9
+   |
+11 | #[component]
+   | ------------ method `colour` not found for this struct
+...
+18 |         html_file!("type_errors.html.griffin")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ method not found in `Badge<'_>`
+   |
+   = note: this error originates in the macro `type_errors_html_griffin_line_11_column_6` (in Nightly builds, run with -Z macro-backtrace for more info)

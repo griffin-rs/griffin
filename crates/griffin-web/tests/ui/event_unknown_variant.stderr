@@ -1,0 +1,27 @@
+error[E0599]: no variant, associated function, or constant named `Incremnt` found for enum `CounterEvent` in the current scope
+  --> tests/ui/event_unknown_variant.rs:14:46
+   |
+ 6 | enum CounterEvent {
+   | ----------------- variant, associated function, or constant `Incremnt` not found for this enum
+...
+14 |             <button phx-click={CounterEvent::Incremnt}>One more</button>
+   |                                              ^^^^^^^^ variant, associated function, or constant not found in `CounterEvent`
+   |
+help: there is a variant with a similar name
+   |
+14 |             <button phx-click={CounterEvent::Increment}>One more</button>
+   |                                                    +
+
+error[E0559]: variant `CounterEvent::Add` has no field named `amount`
+  --> tests/ui/event_unknown_variant.rs:15:52
+   |
+15 |             <button phx-click={CounterEvent::Add { amount: 2 }}>Two more</button>
+   |                                                    ^^^^^^ `CounterEvent::Add` does not have this field
+   |
+   = note: available fields are: `by`
+
+error[E0308]: mismatched types
+  --> tests/ui/event_unknown_variant.rs:16:56
+   |
+16 |             <button phx-click={CounterEvent::Add { by: "two" }}>Two more</button>
+   |                                                        ^^^^^ expected `i32`, found `&str`

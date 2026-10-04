@@ -1,0 +1,59 @@
+error: expected a value in double quotes or an `{expression}` after `class=`
+ --> tests/ui/several_syntax_errors.rs:5:15
+  |
+5 |         <form class=>
+  |               ^^^^^^
+
+error: expected an attribute name, found `="name"`
+ --> tests/ui/several_syntax_errors.rs:6:20
+  |
+6 |             <input ="name" {}>
+  |                    ^^^^^^^
+
+error: expected a Rust expression between the braces
+ --> tests/ui/several_syntax_errors.rs:6:28
+  |
+6 |             <input ="name" {}>
+  |                            ^^
+
+error: `:let` binds the argument of a slot, so it goes on a Component tag or a slot entry, not on an HTML element
+ --> tests/ui/several_syntax_errors.rs:7:21
+  |
+7 |             <button :let={true} :unless={true}>Save</buton>
+  |                     ^^^^
+
+error: unsupported attribute `:unless`
+ --> tests/ui/several_syntax_errors.rs:7:33
+  |
+7 |             <button :let={true} :unless={true}>Save</buton>
+  |                                 ^^^^^^^
+
+error: expected `</button>` to close `<button>`, found `</buton>`
+ --> tests/ui/several_syntax_errors.rs:7:52
+  |
+7 |             <button :let={true} :unless={true}>Save</buton>
+  |                                                    ^^^^^^^^
+
+error: `<p` is missing the `>` that ends the tag
+ --> tests/ui/several_syntax_errors.rs:8:13
+  |
+8 |             <p <b>bold</b></p>
+  |             ^^
+
+error: expected a tag name after `<`
+ --> tests/ui/several_syntax_errors.rs:9:13
+  |
+9 |             < >
+  |             ^
+
+error: `</form` is missing the `>` that ends the tag
+  --> tests/ui/several_syntax_errors.rs:10:9
+   |
+10 |         </form
+   |         ^^^^^^
+
+error: `</main>` has no opening tag
+  --> tests/ui/several_syntax_errors.rs:11:9
+   |
+11 |         </main>
+   |         ^^^^^^^

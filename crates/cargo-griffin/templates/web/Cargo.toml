@@ -1,0 +1,28 @@
+[package]
+name = "__app___web"
+description = "The web layer of __App__: routes, controllers, LiveViews, templates."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+# `src/bin/routes.rs` is the second binary, so `cargo run` needs to know which one.
+default-run = "__app___web"
+
+[features]
+# Turned on by `cargo griffin dev` alone: the handed-over socket and the browser reload.
+# Without it neither is compiled, and tower-livereload is not in the build at all.
+dev = ["griffin/dev"]
+
+[dependencies]
+# Griffin's web crate, named `griffin` so that code reads `griffin::router`.
+griffin = __griffin_web__
+griffin-domain = __griffin_domain__
+__app__ = { path = "../__app__" }
+serde = { version = "1.0.229", features = ["derive"] }
+tokio = { version = "1.53.1", features = ["macros", "net", "rt-multi-thread", "sync"] }
+
+[dev-dependencies]
+tower = { version = "0.5.3", features = ["util"] }
+futures-util = { version = "0.3.34", default-features = false, features = ["sink"] }
+serde_json = "1.0.151"
+tokio-tungstenite = "0.29.0"

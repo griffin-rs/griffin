@@ -1,0 +1,17 @@
+[
+  {
+    "0": " phx-click=\"[[&quot;toggle&quot;,{&quot;to&quot;:&quot;#menu&quot;}]]\"",
+    "p": {
+      "0": [
+        "<button",
+        ">Menu</button>"
+      ]
+    },
+    "r": 1,
+    "s": 0
+  },
+  {
+    "0": " phx-click=\"[[&quot;toggle&quot;,{&quot;to&quot;:&quot;a[title=\\&quot;&lt;Menu&gt; &amp; &#39;more&#39;\\&quot;]&quot;}]]\""
+  },
+  {}
+]

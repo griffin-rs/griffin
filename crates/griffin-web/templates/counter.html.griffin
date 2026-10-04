@@ -1,0 +1,5 @@
+<section class="counter">
+    <h1>{@label}</h1>
+    <button phx-click="inc" disabled={@count >= 10}>Clicked {@count} times</button>
+    <p :if={@count == 0}>Don't be shy.</p>
+</section>

@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<!-- Don't remove {this}: it's the <head> of every page -->
+<html lang='en'>
+<head>
+    <title>{@title}</title>
+    <style>
+        body > p { margin: 0; }
+    </style>
+    <script>
+        if (1 < 2) { console.log("it's </p> {@title}"); }
+    </script>
+</head>
+<body data-greeting='say "hi"' x-data="{ open: false }">
+    <p>It's {@title}'s page &amp; that's "fine".</p>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+error: `navigate` takes a path on this server, as `/users/7`: no scheme, host, `//` or `/\` start, space or control character
+ --> tests/ui/live_link_literal_not_a_path.rs:5:12
+  |
+5 |         <a navigate="javascript:alert(1)">x</a>
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: `patch` takes a path on this server, as `/users/7`: no scheme, host, `//` or `/\` start, space or control character
+ --> tests/ui/live_link_literal_not_a_path.rs:6:12
+  |
+6 |         <a patch="//evil.example">y</a>
+  |            ^^^^^^^^^^^^^^^^^^^^^^

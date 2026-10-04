@@ -1,0 +1,5 @@
+error: `<p>` is never closed
+ --> tests/ui/unclosed_tag.rs:6:13
+  |
+6 |             <p>never closed
+  |             ^^

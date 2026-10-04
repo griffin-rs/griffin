@@ -1,0 +1,8 @@
+{
+  "template": "<p class={@class} style={@style}>text</p>",
+  "steps": [
+    { "class": "note", "style": "color: red" },
+    { "class": "note \"big\"" },
+    { "style": "" }
+  ]
+}

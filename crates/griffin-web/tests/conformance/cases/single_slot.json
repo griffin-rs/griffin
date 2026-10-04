@@ -1,0 +1,8 @@
+{
+  "template": "<p>{@value}</p>",
+  "steps": [
+    { "value": "first" },
+    { "value": "second" },
+    { "value": "second" }
+  ]
+}

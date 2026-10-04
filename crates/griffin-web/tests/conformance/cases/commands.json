@@ -1,0 +1,19 @@
+{
+  "commands": {
+    "show": "JS.show(to: \"#menu\")",
+    "hide": "JS.hide(to: \"#menu\")",
+    "toggle": "JS.toggle(to: \"#menu\")",
+    "toggle_itself": "JS.toggle()",
+    "add_class": "JS.add_class(\"open  active\", to: \"#menu\")",
+    "remove_class": "JS.remove_class(\"open\", to: \"#menu\")",
+    "set_attribute": "JS.set_attribute({\"aria-expanded\", \"true\"}, to: \"#menu\")",
+    "remove_attribute": "JS.remove_attribute(\"aria-expanded\", to: \"#menu\")",
+    "transition": "JS.transition(\"fade-in duration-300\", to: \"#menu\")",
+    "dispatch": "JS.dispatch(\"menu:opened\", to: \"#menu\")",
+    "focus": "JS.focus(to: \"#search\")",
+    "focus_itself": "JS.focus()",
+    "push": "JS.push(\"clear_done\")",
+    "push_with_fields": "JS.push(\"rename\", value: %{id: \"7\", title: \"Milk\"})",
+    "chain": "JS.toggle(to: \"#menu\") |> JS.add_class(\"open\", to: \"#button\") |> JS.push(\"rename\", value: %{id: \"7\", title: \"Milk\"})"
+  }
+}

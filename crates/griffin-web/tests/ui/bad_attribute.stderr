@@ -1,0 +1,5 @@
+error: expected a value in double quotes or an `{expression}` after `type=`
+ --> tests/ui/bad_attribute.rs:5:16
+  |
+5 |         <input type=text>
+  |                ^^^^^

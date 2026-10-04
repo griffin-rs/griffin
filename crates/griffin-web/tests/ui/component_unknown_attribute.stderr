@@ -1,0 +1,8 @@
+error[E0599]: no method named `colour` found for struct `Badge<'a>` in the current scope
+  --> tests/ui/component_unknown_attribute.rs:11:31
+   |
+ 4 | #[component]
+   | ------------ method `colour` not found for this struct
+...
+11 |         <p><Badge label="new" colour="red" /></p>
+   |                               ^^^^^^ method not found in `Badge<'_>`

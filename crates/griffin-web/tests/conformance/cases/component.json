@@ -1,0 +1,19 @@
+{
+  "components": "attr :label, :string, required: true\nattr :count, :integer, default: 0\n\ndef badge(assigns) do\n  ~H|<span class=\"badge\">{@label} {@count}</span>|\nend",
+  "template": "<p>Inbox <.badge label={@label} count={@count} /> Drafts <.badge label={@label} /></p>",
+  "steps": [
+    {
+      "label": "new",
+      "count": 1
+    },
+    {
+      "count": 2
+    },
+    {
+      "count": 2
+    },
+    {
+      "label": "old"
+    }
+  ]
+}

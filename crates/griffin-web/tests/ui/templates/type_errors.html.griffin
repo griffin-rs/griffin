@@ -1,0 +1,12 @@
+<section>
+    <h1>{@title}</h1>
+    <p :if={@count}>Shown</p>
+    <ul>
+        <li
+            :for={item in @count}
+            class={Opaque}
+        >{item}</li>
+    </ul>
+    <p>{@cuont} of {@count +}</p>
+    <Badge label={@count} colour="red" />
+</section>

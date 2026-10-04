@@ -1,0 +1,12 @@
+error: a variant with a `#[form]` field takes nothing else: the browser sends the form as one string, with no fields beside it
+ --> tests/ui/event_form_misuse.rs:7:9
+  |
+7 |         id: u32,
+  |         ^^^^^^^
+
+error: a variant takes one `#[form]` field at most
+  --> tests/ui/event_form_misuse.rs:19:9
+   |
+19 | /         #[form]
+20 | |         second: FormParams,
+   | |__________________________^

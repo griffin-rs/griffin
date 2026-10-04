@@ -1,0 +1,23 @@
+{
+  "components": "attr :rows, :list, required: true\n\nslot :col, required: true do\n  attr :label, :string\nend\n\ndef table(assigns) do\n  ~H|<table><tr><th :for={col <- @col}>{col.label}</th></tr><tr :for={row <- @rows}><td :for={col <- @col}>{render_slot(col, row)}</td></tr></table>|\nend",
+  "template": "<.table rows={@rows}><:col :let={row} label=\"Name\"><b>{row[\"name\"]}</b></:col><:col :let={row} label={@unit}>{row[\"age\"]} {@unit}</:col></.table>",
+  "steps": [
+    {
+      "rows": [{"name": "Ann", "age": 30}, {"name": "Bob", "age": 40}],
+      "unit": "years"
+    },
+    {
+      "rows": [{"name": "Anna", "age": 31}, {"name": "Bob", "age": 40}, {"name": "Cy", "age": 50}]
+    },
+    {
+      "rows": [{"name": "Dee", "age": 32}, {"name": "Eve", "age": 41}, {"name": "Flo", "age": 51}],
+      "unit": "winters"
+    },
+    {
+      "rows": [{"name": "Dee", "age": 32}]
+    },
+    {
+      "rows": []
+    }
+  ]
+}

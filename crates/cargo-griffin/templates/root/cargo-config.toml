@@ -1,0 +1,4 @@
+# `cargo griffin <command>` runs the xtask crate, at the Griffin version in Cargo.lock.
+# No global install is needed inside a project.
+[alias]
+griffin = "run --quiet --package xtask --"
