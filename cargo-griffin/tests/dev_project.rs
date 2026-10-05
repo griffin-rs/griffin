@@ -16,7 +16,7 @@ use std::time::{Duration, Instant};
 
 fn repo() -> PathBuf {
     Path::new(env!("CARGO_MANIFEST_DIR"))
-        .join("../..")
+        .join("..")
         .canonicalize()
         .unwrap()
 }

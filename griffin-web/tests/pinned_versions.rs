@@ -6,7 +6,7 @@ use std::fs;
 use std::path::Path;
 
 fn read(path: &str) -> String {
-    let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
+    let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("..");
     fs::read_to_string(root.join(path)).unwrap_or_else(|error| panic!("{path}: {error}"))
 }
 
@@ -19,17 +19,17 @@ fn quoted(source: &str, after: &str) -> String {
 #[test]
 fn the_documents_state_the_versions_the_code_pins() {
     let live = quoted(
-        &read("crates/griffin-web/src/live.rs"),
+        &read("griffin-web/src/live.rs"),
         "const CLIENT_VERSION: &str = \"",
     );
-    let pins = read("crates/griffin-web/tests/conformance/generate.exs");
+    let pins = read("griffin-web/tests/conformance/generate.exs");
     assert_eq!(quoted(&pins, "phoenix_live_view: \""), live);
     let phoenix = quoted(&pins, "phoenix: \"");
 
     for path in [
         "README.md",
         "CONTRIBUTING.md",
-        "crates/cargo-griffin/templates/root/README.md",
+        "cargo-griffin/templates/root/README.md",
         "examples/counter/assets/vendor/README.md",
     ] {
         let text = read(path);

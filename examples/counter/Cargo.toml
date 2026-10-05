@@ -9,5 +9,5 @@ publish = false
 
 [dependencies]
 # Not aliased to `griffin`: a generated project does, with one `extern crate` line (the macros write `::griffin_web::` paths).
-griffin-web = { path = "../../crates/griffin-web" }
+griffin-web = { path = "../../griffin-web" }
 tokio = { version = "1.53.1", features = ["macros", "net", "rt-multi-thread"] }
