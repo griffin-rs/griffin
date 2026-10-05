@@ -87,15 +87,16 @@ Phoenix showed that a framework can be productive and fast at the same time. It 
 - Phoenix and Rails developers who want Rust's performance and safety without giving up productivity.
 - Teams who would rather follow strong conventions than reinvent their stack on every project.
 
-## Planned phases (high level)
+## Planned phases
 
-1. **Foundation**: HTTP core, router, pipelines, controllers, templates.
-2. **Interactivity**: LiveView, components, channels, PubSub.
-3. **Data**: database layer, changesets, migrations, generators.
-4. **Background & Communication**: job queue, scheduler, mailer, state machines.
-5. **Identity**: auth generator, authorization, security defaults.
-6. **Operations**: telemetry, live dashboard, releases and deployment.
-7. **Ecosystem**: documentation, guides, example apps and community plugins.
+Six phases, tracked as [milestones](https://github.com/griffin-rs/griffin/milestones), which are the single source for scope and order:
+
+1. **Web + LiveView**
+2. **Data + identity**
+3. **Real-time (single node)**
+4. **Background work and communication**
+5. **Operations and scale**
+6. **Ecosystem**
 
 ## Status
 
