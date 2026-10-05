@@ -8,7 +8,7 @@ use std::process::{Command, Output};
 /// The repository's root: generated projects depend on this checkout by path.
 fn repo() -> PathBuf {
     Path::new(env!("CARGO_MANIFEST_DIR"))
-        .join("../..")
+        .join("..")
         .canonicalize()
         .unwrap()
 }
@@ -362,7 +362,7 @@ fn new_downloads_verified_tools_and_builds_the_stylesheet() {
 /// `plain.css` are each written under one flag, and both are named there.)
 #[test]
 fn every_template_file_is_written_into_a_generated_project() {
-    let crate_dir = repo().join("crates/cargo-griffin");
+    let crate_dir = repo().join("cargo-griffin");
     let written = fs::read_to_string(crate_dir.join("src/project.rs")).unwrap();
     let templates = crate_dir.join("templates");
     for file in files(&templates) {

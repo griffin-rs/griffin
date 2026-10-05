@@ -119,7 +119,7 @@ You need a stable Rust toolchain at or above the `rust-version` in [Cargo.toml](
 
 ```bash
 git clone https://github.com/griffin-rs/griffin
-cargo install --path griffin/crates/cargo-griffin
+cargo install --path griffin/cargo-griffin
 cargo griffin new my_app --griffin-path "$PWD/griffin"
 cd my_app
 cargo griffin dev            # http://127.0.0.1:4000

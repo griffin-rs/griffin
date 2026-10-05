@@ -9,7 +9,7 @@ publish = false
 
 [dependencies]
 # Not aliased to `griffin`, as in the counter example.
-griffin-web = { path = "../../crates/griffin-web" }
+griffin-web = { path = "../../griffin-web" }
 # For the query string of a page: a typed struct.
 serde = { version = "1.0.229", features = ["derive"] }
 tokio = { version = "1.53.1", features = ["macros", "net", "rt-multi-thread"] }

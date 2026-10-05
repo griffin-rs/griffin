@@ -293,7 +293,7 @@ impl Files<'_> {
 fn generate(options: &Options, root: &Path, griffin: &Path) -> Result<(), Error> {
     let app = options.name.as_str();
     let path = fs::canonicalize(griffin).map_err(io(griffin))?;
-    let at = |name: &str| format!("path = {:?}", path.join("crates").join(name));
+    let at = |name: &str| format!("path = {:?}", path.join(name));
     let web_dep = format!("{{ package = \"griffin-web\", {} }}", at("griffin-web"));
     let domain_dep = format!("{{ {} }}", at("griffin-domain"));
     let cli_dep = format!("{{ {} }}", at("cargo-griffin"));

@@ -18,7 +18,7 @@ cargo test -p griffin-web --test conformance
 Regenerating fixtures needs Elixir and network access to Hex:
 
 ```bash
-elixir crates/griffin-web/tests/conformance/generate.exs
+elixir griffin-web/tests/conformance/generate.exs
 ```
 
 ## Adding a case

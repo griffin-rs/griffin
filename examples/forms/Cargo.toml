@@ -8,7 +8,7 @@ license.workspace = true
 publish = false
 
 [dependencies]
-griffin-domain = { path = "../../crates/griffin-domain" }
+griffin-domain = { path = "../../griffin-domain" }
 # Not aliased to `griffin`, as in the counter example.
-griffin-web = { path = "../../crates/griffin-web" }
+griffin-web = { path = "../../griffin-web" }
 tokio = { version = "1.53.1", features = ["macros", "net", "rt-multi-thread", "sync"] }

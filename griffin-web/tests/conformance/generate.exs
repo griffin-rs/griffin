@@ -1,7 +1,7 @@
 # Regenerates fixtures/<case>.json from cases/<case>.json by running each case
 # through real Phoenix LiveView. See README.md in this directory.
 #
-#     elixir crates/griffin-web/tests/conformance/generate.exs
+#     elixir griffin-web/tests/conformance/generate.exs
 
 # The pinned client release. Exact versions, never ranges.
 pins = [phoenix_live_view: "1.2.12", phoenix: "1.8.15"]

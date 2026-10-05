@@ -11,7 +11,7 @@ They are the prebuilt ES module bundles those releases ship, the same bytes as a
 
 ## Upgrading
 
-Do this as part of upgrading the pinned version (`crates/griffin-web/tests/conformance/README.md`), never by itself: the server answers a join with the version in `CLIENT_VERSION` (`crates/griffin-web/src/live.rs`), and the client warns when its own differs.
+Do this as part of upgrading the pinned version (`griffin-web/tests/conformance/README.md`), never by itself: the server answers a join with the version in `CLIENT_VERSION` (`griffin-web/src/live.rs`), and the client warns when its own differs.
 
 ```bash
 npm pack phoenix@<version> phoenix_live_view@<version>
@@ -19,4 +19,4 @@ tar xzf phoenix-<version>.tgz                # package/priv/static/phoenix.mjs, 
 tar xzf phoenix_live_view-<version>.tgz      # package/priv/static/phoenix_live_view.esm.js, package/LICENSE.md
 ```
 
-Copy the two bundles and the two licenses over the files here and over the same four files in `crates/cargo-griffin/vendor/` (the copy `cargo griffin new` writes into projects; `the_client_is_vendored_byte_for_byte_from_the_one_copy_in_the_repository` fails if they differ), update the table (`shasum -a 256`), then run the browser tests (`browser-tests/README.md`).
+Copy the two bundles and the two licenses over the files here and over the same four files in `cargo-griffin/vendor/` (the copy `cargo griffin new` writes into projects; `the_client_is_vendored_byte_for_byte_from_the_one_copy_in_the_repository` fails if they differ), update the table (`shasum -a 256`), then run the browser tests (`browser-tests/README.md`).
